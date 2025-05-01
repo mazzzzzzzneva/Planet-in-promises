@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Космический калькулятор обещаний</title>
+        <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="space-bg"></div>
+    <div class="floating-stuff" id="floatingStuff"></div>
+    
+    <main class="main-wrapper">
+        <header class="top-header">
+            <h1 class="big-title">СКОЛЬКО ОБЕЩАНИЙ В ПЛАНЕТЕ?</h1>
+        </header>
+
+        <div class="planet-chooser">
+            <h2 class="choose-title">Тыкай на планету</h2>
+            
+            <div class="planet-buttons">
+                <div class="planet-btn" data-planet="mercury">
+                    <div class="planet-symbol">☿</div>
+                    <h3>Меркурий</h3>
+                </div>
+                
+                <div class="planet-btn" data-planet="venus">
+                    <div class="planet-symbol">♀</div>
+                    <h3>Венера</h3>
+                </div>
+                
+                <div class="planet-btn" data-planet="earth">
+                    <div class="planet-symbol">♁</div>
+                    <h3>Земля</h3>
+                </div>
+                
+                <div class="planet-btn" data-planet="mars">
+                    <div class="planet-symbol">♂</div>
+                    <h3>Марс</h3>
+                </div>
+                
+                <div class="planet-btn" data-planet="jupiter">
+                    <div class="planet-symbol">♃</div>
+                    <h3>Юпитер</h3>
+                </div>
+                
+                <div class="planet-btn" data-planet="saturn">
+                    <div class="planet-symbol">♄</div>
+                    <h3>Сатурн</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-box">
+            <p><span id="current-planet">выбери планету</span></p>
+            <div id="planet-pic">🪐</div>
+            <div class="result-text" id="resultText">
+                <span id="promise-number">0</span> обещаний
+            </div>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

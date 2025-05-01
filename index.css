@@ -1,0 +1,177 @@
+:root {
+    --space-black: #1c154b;
+    --space-gray: #a7a9be;
+    --main-orange: #ffc2c2;
+    --pure-white: #ffffff;
+}
+
+body {
+    font-family: 'Russo One', sans-serif;
+    background-color: var(--space-black);
+    color: var(--pure-white);
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+.space-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, var(--space-black) 0%, #000000 100%);
+    z-index: -2;
+}
+
+.main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.top-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.big-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5em;
+    color: var(--main-orange);
+    text-shadow: 0 0 10px rgba(255, 137, 6, 0.5);
+}
+
+/*выбор*/
+.planet-chooser {
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    padding: 1.5rem;
+    background: rgba(15, 14, 23, 0.8);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 137, 6, 0.3);
+}
+
+.choose-title {
+    text-align: center;
+    color: var(--space-gray);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.planet-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.planet-btn {
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.planet-btn:hover {
+    transform: translateY(-5px);
+    background: rgba(106, 0, 244, 0.2);
+    box-shadow: 0 5px 15px rgba(255, 137, 6, 0.2);
+}
+
+.planet-btn.active {
+    background: rgba(255, 137, 6, 0.2);
+    border-color: var(--main-orange);
+}
+
+.planet-symbol {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.planet-btn:hover .planet-symbol {
+    transform: scale(1.2);
+}
+
+.result-box {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 600px;
+    background: rgba(15, 14, 23, 0.6);
+    border-radius: 15px;
+    animation: appear 0.5s ease-out;
+}
+
+#current-planet {
+    color: var(--main-orange);
+    font-weight: bold;
+}
+
+#planet-pic {
+    font-size: 4rem;
+    margin: 1rem 0;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+.result-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+#promise-number {
+    color: var(--main-orange);
+    font-size: 2rem;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float-around {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.floating-thing {
+    position: fixed;
+    font-size: 24px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.space-effect {
+    z-index: 0;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes spin-around {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@media (max-width: 768px) {
+    .planet-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .big-title {
+        font-size: 1.8rem;
+    }
+}
